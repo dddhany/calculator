@@ -147,23 +147,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lm-Ue-x0m">
                                 <rect key="frame" x="470" y="75" width="102" height="123"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="?"/>
+                                <state key="normal" title="sin"/>
                                 <connections>
-                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCZ-MR-Qw2"/>
+                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y7z-VM-gq7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yD-ns-eOQ">
                                 <rect key="frame" x="470" y="206" width="102" height="124"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="?"/>
+                                <state key="normal" title="cos"/>
                                 <connections>
-                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zma-c9-WEx"/>
+                                    <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DhM-wr-Odb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0og-Ta-m3F">
                                 <rect key="frame" x="470" y="338" width="102" height="123"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="?"/>
+                                <state key="normal" title="π"/>
                                 <connections>
                                     <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AHF-Xi-o1h"/>
                                 </connections>
@@ -180,6 +180,9 @@
                                 <rect key="frame" x="28" y="469" width="102" height="123"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="."/>
+                                <connections>
+                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ws4-t0-xao"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
