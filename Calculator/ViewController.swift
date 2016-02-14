@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     
     var userIsInTheMiddleOfTypyingANumber = false
     
+    var brain = CalculatorBrain()
+    
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         if digit == "." && display.text!.containsString(".") {
@@ -28,41 +30,25 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func operate(sender: UIButton) {
-        let operation = sender.currentTitle!
         if userIsInTheMiddleOfTypyingANumber {
             enter()
         }
-        switch operation {
-        case "✖️": performOperation {$0 * $1}
-        case "➗": performOperation {$1 / $0}
-        case "➕": performOperation {$0 + $1}
-        case "➖": performOperation {$1 - $0}
-        case "✔️": performOperation { sqrt($0) }
-        case "sin": performOperation { sin($0) }
-        case "cos": performOperation { cos($0) }
-        default: break
+        if let operation = sender.currentTitle {
+            if let result = brain.performOperation(operation){
+                displayValue = result
+            } else {
+                displayValue = 0
+            }
         }
     }
     
-    private func performOperation(operation: Double -> Double){
-        if operandStack.count >= 1 {
-            displayValue = operation(operandStack.removeLast())
-            enter()
-        }
-    }
-    
-    func performOperation(operation: (Double, Double) -> Double){
-        if operandStack.count >= 2 {
-            displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
-            enter()
-        }
-    }
-    
-    var operandStack = Array<Double>()
     @IBAction func enter() {
         userIsInTheMiddleOfTypyingANumber = false
-        operandStack.append(displayValue)
-        print("operandStack = \(operandStack)")
+        if let result = brain.pushOperand(displayValue){
+            displayValue = result
+        } else {
+            displayValue = 0
+        }
     }
 
     var displayValue: Double {
